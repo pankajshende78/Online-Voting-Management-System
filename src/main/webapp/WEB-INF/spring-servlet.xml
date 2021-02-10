@@ -18,8 +18,8 @@
 
 
 	<context:component-scan base-package="springm"></context:component-scan>
-    
-    <bean
+
+	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>
@@ -27,10 +27,7 @@
 	</bean>
 
 
-
-
-
-	<bean
+    <bean
 
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		name="ds">
@@ -53,7 +50,7 @@
 		<!-- Data Scource -->
 		<property name="dataSource" ref="ds"></property>
 
-		<!-- Hibernate Properties -->   <!--  Dialect -->
+		<!-- Hibernate Properties -->   <!-- Dialect -->
 		<property name="hibernateProperties">
 
 			<props>
@@ -64,7 +61,7 @@
 
 		</property>
 
-  
+
 
 		<!-- annotatedClasses -->
 		<property name="annotatedClasses">
@@ -90,22 +87,14 @@
 
 	</bean>
 
-
-
-
-
-	<!-- Hibernate Template -->
+   <!-- Hibernate Template -->
 	<bean class="org.springframework.orm.hibernate5.HibernateTemplate"
 		name="hibernateTempate">
 		<property name="sessionFactory" ref="factory"></property>
 
 	</bean>
 
-
-
-
-
-	<bean
+    <bean
 
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
 		name="transactionManager">

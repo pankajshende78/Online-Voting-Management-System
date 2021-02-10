@@ -19,72 +19,39 @@
 	</div>
 	<hr>
 
-	<div class="container mt-1">
+	<form action="voteing" method="post">
 
-		<div class="row">
+		<c:forEach items="${list}" var="p">
 
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">${p.candidateid}</h5>
+								<p class="card-text">${p.name}</p>
+								<button type="submit" name="name" value="${p.name}"
+									class="btn btn-danger">Give Vote</button>
 
-			<div class="col-md-10 ">
-				<h1 class="text-center md-2">Vote</h1>
-				<table class="table">
-
-					<table class="table table-center">
-						<thead class="thead-light">
-							<tr>
-								<th scope="col">ID</th>
-								<th scope="col">Name</th>
-
-								<th scope="col">Vote</th>
-							</tr>
-						</thead>
-						<tbody>
-							<form action="voteing" method="post">
-
-								<c:forEach items="${list}" var="p">
-									<tr>
-										<th scope="row">${p.candidateid}</th>
-										<td>${p.name}</td>
-										<td><button type="submit" name="name" value="${p.name}"
-												class="btn btn-danger">Give Vote</button></td>
-									</tr>
-
-								</c:forEach>
-							</form>
-						</tbody>
-					</table>
-
-
-
-
+							</div>
+						</div>
 					</div>
+				</div>
+			</div>
+			</div>
+		</c:forEach>
 
-					</div>
+	</form>
 
+	<br>
+	<div class="container text-right" align="right">
 
-
-
-
-
-
-
-					<br>
-					<div class="container text-right" align="right">
-
-						<a href="givevote" class="btn btn-outline-danger">Back </a> <br>
-					</div>
+		<a href="givevote" class="btn btn-outline-danger">Back </a> <br>
+	</div>
 
 
 
 
-					<div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
+	<div>
 </body>
 </html>
