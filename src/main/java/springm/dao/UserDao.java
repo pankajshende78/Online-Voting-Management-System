@@ -98,8 +98,7 @@ public class UserDao {
 
 	@Transactional
 	public List<candivote> checkvote() {
-		System.out.println("pankaj");
-
+		
 		List<candivote> list = this.hibernateTemplate.loadAll(candivote.class);
 
 		List<candivote> check = this.hibernateTemplate.loadAll(candivote.class);

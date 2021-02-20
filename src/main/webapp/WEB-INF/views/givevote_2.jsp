@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,15 +11,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body bgcolor="pink">
-<script>
+	<script>
 		function validateform() {
 			var id = document.myform.id.value;
-			
 
 			if (id == null || id == "") {
 				alert("filled can't be blank");
 				return false;
-			} 
+			}
 
 		}
 	</script>
@@ -32,13 +31,15 @@
 		<div class="col-md-4 offset-md-4">
 			<h1 class="text-center mb-3">Please Enter OTP...</h1>
 			<hr>
-			<br><br><br>
+			<br>
+			<br>
+			<br>
 			<form action="checkid" method="post" name="myform"
 				onsubmit="return validateform()">
 
 				<div class="form-group">
-					<label for="name">Enter Your OTP</label><input
-						type="text" class="form-control" id="otp" name="otp"
+					<label for="name">Enter Your OTP</label><input type="text"
+						class="form-control" id="otp" name="otp"
 						placeholder="Enter OTP Here">
 				</div>
 				<br>
@@ -47,20 +48,19 @@
 
 					<button type="submit" class="btn btn-primary">verify OTP</button>
 					<button type="reset" class="btn btn-primary">Reset</button>
-
-				</form>
+			</form>
 		</div>
 	</div>
-           
-           
-	
-
-
-</form>
 
 
 
-<hr>
+
+
+	</form>
+
+
+
+	<hr>
 
 
 
