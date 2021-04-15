@@ -1,5 +1,6 @@
 package springm.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Lob;
@@ -56,6 +57,9 @@ public class UserDao {
 		Integer id = (Integer) this.hibernateTemplate.save(votersEntity);
 		return id;
 	}
+	
+	
+	
 
 	@Transactional
 	public int candisave(candivote candivote) {
@@ -134,6 +138,15 @@ public class UserDao {
 		Contact c = this.hibernateTemplate.load(Contact.class, id);
 		this.hibernateTemplate.delete(c);
 	}
+	
+	@Transactional
+	public void deleteCheckid(int deleteid)
+	{
+		VotersEntity v= this.hibernateTemplate.load(VotersEntity.class,deleteid);
+		
+	 this.hibernateTemplate.delete(v);
+		
+	}
 
 	@Transactional
 	public void deletedataLogin(int id) {
@@ -149,16 +162,20 @@ public class UserDao {
 		Session s = sessionFactory.getCurrentSession();
 		String q = "from VotersEntity as s where s.id=:id";
 		Query query = s.createQuery(q);
+		
 		query.setParameter("id", votersEntity.getId());
-
+		
 		List r = query.list();
 
 		if (r != null && (r.size() > 0)) {
+			
 			return "success";
+				
 		} else {
 			return "fail";
 		}
-
+		
+		
 	}
 
 }

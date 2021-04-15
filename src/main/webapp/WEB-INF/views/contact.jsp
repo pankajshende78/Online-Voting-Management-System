@@ -6,29 +6,59 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
   <%@include file="./base.jsp"%>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  
+  <link href="assets/css/login_style.css" rel="stylesheet">
+  <style>
+body  {
+  background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
+  background-color: #cccccc;
+}
+</style>
 </head>
 <body>
 	
-	<br>
-<jsp:include page="UserNav.jsp"></jsp:include>
-	<hr>
+
+
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">The Vote</a></h1>
+     
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li ><a href="userlogin">CheckName</a></li>
+       
+          <li><a href="givevote">Give Vote</a></li>
+          <li class="active" ><a href="#contact">Contact</a></li>
+
+        </ul>
+      </nav>
+ 		
+ 		
+		 <a href="homepage" class="get-started-btn scrollto">Logout</a>
+		 
+
+    </div>
+  </header>
 <div class="container mt-4">
 
 		<section class="mb-3">
-
-
-			<h2 class="h1-responsive font-weight-bold text-center my-3">Contact
+			<h2 class="h1-responsive font-weight-bold text-center my-3 text-white">Contact
 				us</h2>
 
-			<p class="text-center w-responsive mx-auto mb-5">Do you have any
+			<p class="text-center w-responsive mx-auto mb-5 text-white">Do you have any
 				questions? Please do not hesitate to contact us directly.</p>
 
 			<div class="row">
@@ -41,7 +71,7 @@
 						<div class="row">
 
 							<div class="col-md-6">
-								<div class="md-form mb-0">
+								<div class="md-form mb-0 text-white">
 									<label for="name" >Your name</label> <input
 										type="text" placeholder="Enter Your Name" name="name"
 										class="form-control">
@@ -50,7 +80,7 @@
 							</div>
 
 							<div class="col-md-6">
-								<div class="md-form mb-0">
+								<div class="md-form mb-0 text-white">
 									<label for="email">Your email</label> <input
 										type="text" placeholder="Enter Email Id Here" name="email"
 										class="form-control">
@@ -63,7 +93,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="md-form mb-0">
+								<div class="md-form mb-0 text-white">
 									<label for="subject" >Subject</label> <input
 										type="text" placeholder="Enter Subject Here" name="subject"
 										class="form-control">
@@ -77,7 +107,7 @@
 
 							<div class="col-md-12">
 
-								<div class="md-form">
+								<div class="md-form text-white">
 									<label for="message">Your message</label>
 									<textarea type="text" name="message" rows="2"
 										placeholder="Enter Your Message Here"
@@ -92,7 +122,7 @@
 
 
 
-							<button type="submit" class="btn btn-primary">Sent</button>
+							<button type="submit" class="btn btn-primary">Sent Message</button>
 							<button type="reset" class="btn btn-primary">Reset</button>
 						</div>
 
@@ -105,14 +135,14 @@
 
 				<div class="col-md-3 text-center">
 					<ul class="list-unstyled mb-0">
-						<li><i class="fas fa-map-marker-alt fa-2x"></i>
-							<p>Pankaj Shende</p></li>
+						<li><i class="fas fa-map-marker-alt fa-2x text-white" ></i>
+							<p class="text-white">Pankaj Shende</p></li>
 
-						<li><i class="fas fa-phone mt-4 fa-2x"></i>
-							<p>+ 91 XXXXXX9121</p></li>
+						<li><i class="fas fa-phone mt-4 fa-2x text-white"></i>
+							<p class="text-white" >+ 91 XXXXXX9121</p></li>
 
-						<li><i class="fas fa-envelope mt-4 fa-2x"></i>
-							<p>PankajShende@examle</p></li>
+						<li><i class="fas fa-envelope mt-4 fa-2x text-white "></i>
+							<p class="text-white">PankajShende@examle</p></li>
 					</ul>
 				</div>
 

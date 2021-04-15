@@ -84,6 +84,12 @@ public class UserService {
 	public void deletedata(int id) {
 		this.userdao.deletedata(id);
 	}
+	
+	
+	public void deleteCheckid(int deleteid)
+	{
+		this.userdao.deleteCheckid(deleteid);
+	}
 
 	public void deletedataLogin(int id) {
 		this.userdao.deletedataLogin(id);

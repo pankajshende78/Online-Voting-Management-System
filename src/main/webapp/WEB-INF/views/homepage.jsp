@@ -5,7 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
+<style>
+body  {
+  background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
+  background-color: #cccccc;
+}
+</style>
 <%@include file="./base.jsp"%>
 </head>
 
@@ -30,33 +35,34 @@
 	</script>
 	<br>
 	<div class="text-center">
-		<nav class="navbar navbar-light bg-warning ">
+		<nav class="navbar navbar-dark bg-secondary ">
 			<div class="navbar-brand">Online Voting Managment</div>
 	</div>
 	</nav>
 	</div>
-	
-<hr>
+
+	<hr>
 
 
 	<div class="row">
-		<div class="container-fluid" >
+		<div class="container-fluid">
 			<div class="col-md-4 offset-md-4">
 
-				<h1 class="text-center mb-4">Login Form</h1><hr>
+				<h1 class="text-center mb-4 text-white">Login Form</h1>
+				<hr>
 
 				<form action="login" method="post" name="myform"
 					onsubmit="return validateform()">
 
 					<div class="form-group">
-						<label for="name">Username</label><input type="email"
+						<label for="name" class="text-white">Username</label><input type="email"
 							class="form-control" id="name" aria-describedbr="emailHelp"
 							name="email" placeholder="Enter Email ID Here">
 					</div>
 
 
 					<div class="form-group">
-						<label for="password">Password</label><input type="password"
+						<label for="password" class="text-white">Password</label><input type="password"
 							class="form-control" id="password" name="password"
 							placeholder="Enter Password Here">
 					</div>
@@ -72,16 +78,21 @@
 				</form>
 
 				<br> <br> <br>
-
-				<div class="container text-right" align="right">
-
-					<a href="newregister" class="btn btn-outline-danger">New
-						Registration</a> <br> <br>
-
-
+				
+				
 
 				</div>
 
+				
+					
+				
+
+			<div class="container text-center" align="center">
+			
+			<a href="newregister" class="btn btn-outline-primary">Sign up</a>
+
+				<a href="" class="btn btn-outline-danger">Back</a>
+</div>
 
 			</div>
 		</div>

@@ -24,8 +24,14 @@ public class controller {
 
 	@RequestMapping("/")
 	public String firstpage() {
+		return "index";
+	}
+	
+	@RequestMapping("/homepage")
+	public String login() {
 		return "homepage";
 	}
+
 
 	@RequestMapping("/newregister")
 	public String newregistration() {
@@ -46,6 +52,7 @@ public class controller {
 		if (password.equals(repassword)) {
 
 			int id = user.createUser(newregister);
+
 			if (id > 0) {
 
 				RedirectView redirectView = new RedirectView();
@@ -76,7 +83,6 @@ public class controller {
 			String id = user.checkservuser(newregister);
 
 			if (id == "success") {
-
 				return "userlogin";
 			} else {
 

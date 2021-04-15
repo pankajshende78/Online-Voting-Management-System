@@ -8,9 +8,33 @@
 
 
 <%@ page isELIgnored="false"%>
-<%@include file="./base.jsp"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+ <link href="assets/css/login_style.css" rel="stylesheet">
+ 
+ 
+ <script src=
+"https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+
+<style>
+body  {
+  background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
+  background-color: #cccccc;
+}
+</style>
+
+
 
 </head>
 <body bgcolor="pink">
@@ -25,24 +49,48 @@
 
 		}
 	</script>
+	
+	
 
 
 
 
 	<br>
-	<jsp:include page="UserNav.jsp"></jsp:include><hr>
+	<header id="header" class="fixed-top ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">The Vote</a></h1>
+     
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li  ><a href="userlogin">Home</a></li>
+       
+          <li class="active"><a href="givevote">Give Vote</a></li>
+          <li><a href="contact">Contact</a></li>
+
+        </ul>
+      </nav>
+ 		
+ 		
+		 <a href="homepage" class="get-started-btn scrollto">Logout</a>
+		 
+
+    </div>
+  </header>
+	<br><br><br><br>
 
 
 
 	<div class="row">
 		<div class="col-md-4 offset-md-4">
-			<h1 class="text-center mb-3">Please Enter Voter ID</h1>
+			<h1 class="text-center mb-3 text-white">Please Enter Voter ID</h1>
 			<hr>
-			<br>
+			
 			<form action="checkid" method="post" name="myform"
 				onsubmit="return validateform()">
 
-				<div class="form-group">
+				<div class="form-group text-white">
 					<label for="name">Enter Your Voter ID</label><input type="text"
 						class="form-control" id="name" name="id"
 						placeholder="Enter Voter ID Here">
@@ -53,61 +101,16 @@
 
 
 
-					<button type="submit" class="btn btn-primary">Verify</button>
-					<button type="reset" class="btn btn-primary">Reset</button>
+					<button type="submit" class="btn btn-primary" value="display value">Verify</button>
+					<button type="reset" class="btn btn-primary">Reset</button> </div>
 			</form>
 		</div>
 	</div>
+	<div class="container text-right" >
 
-
-
-
-
-
-	<br>
-	<hr>
-
-	<%-- <div class="container mt-3">
-
-		<div class="row">
-			<div class="col-md 15">
-				<h1 class="text-center md-7">Candidate Details</h1>
-				<table class="table">
-
-
-					<table class="table">
-						<thead class="thead-light">
-							<tr>
-								<th scope="col">Candidate ID</th>
-								<th scope="col">ID</th>
-								<th scope="col">Name</th>
-								<th scope="col">PHONE</th>
-								<th scope="col">TOPIC</th>
-
-							</tr>
-						</thead>
-						<tbody>
-
-							<c:forEach items="${usercandi}" var="p">
-								<tr>
-									<td>${p.id}</td>
-									<th scope="row">${p.candidateid}</th>
-									<td>${p.name}</td>
-									<td>${p.phone}</td>
-									<td>${p.topic}</td>
-
-
-
-									</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-					</div>
-
-
-					<div class="container text-right" align="right">
-
-						<a href="userlogin" class="btn btn-outline-danger">Back</a> --%>
+		<a href="userlogin" class="btn btn-danger">Back </a> <br>
+	</div>
+ 
 </body>
+	
 </html>

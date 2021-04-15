@@ -11,13 +11,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <title>Insert title here</title>
+
+<style>
+body  {
+  background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
+  background-color: #cccccc;
+}
+</style>
 </head>
 <html>
 <body>
-
 <br>
-<jsp:include page="UserNav.jsp"></jsp:include>
-<hr>
+<div class="text-center">
+		<nav class="navbar navbar-dark bg-secondary ">
+			<div class="navbar-brand">Online Voting Managment</div>
+	</div>
+	</nav>
+	</div><br>
 
 
 <div class="container mt-1">
@@ -26,7 +36,7 @@
 
 
 			<div class="col-md 15">
-<h1 class="text-center md-2">Voters</h1>
+<h1 class="text-center md-2 text-white">Voters</h1>
 				<table class="table">
 
 
@@ -38,7 +48,7 @@
 								
 							</tr>
 						</thead>
-						<tbody>
+						<tbody class="text-white">
 
 							<c:forEach items="${viewvoter}" var="p">
 								<tr>
@@ -50,19 +60,16 @@
 								</tr>
 							</c:forEach>
 						</tbody>
-					</table>
+					</table> </table>
+</div></div></div>
 
+<div class="container">
 
+				<a href="givevote" class="btn btn-primary">Give vote</a> </div>
 
+<div class="container text-right" align="right">
 
-					</div>
-
-					</div>
-
-
-
-					</div>
-
+				<a href="userlogin" class="btn btn-outline-danger">Back</a> </div>
 
 </body>
 </html>

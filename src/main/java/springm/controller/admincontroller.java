@@ -50,12 +50,12 @@ public class admincontroller {
 		int id = user.savecandidate(elecCandi);
 
 		if (id > 0) {
-			
+
 			RedirectView redirectView = new RedirectView();
 			redirectView.setUrl(request.getContextPath() + "/adminpage");
 			return redirectView;
 		} else {
-			
+
 			RedirectView redirectView = new RedirectView();
 			redirectView.setUrl(request.getContextPath() + "/error");
 			return redirectView;
@@ -79,6 +79,7 @@ public class admincontroller {
 		}
 
 	}
+
 	@RequestMapping("/viewvoterlist")
 	public String getvoters(Model m) {
 
@@ -107,20 +108,34 @@ public class admincontroller {
 	}
 
 	@RequestMapping(path = "/checkid", method = RequestMethod.POST)
-	public String checkid(@ModelAttribute VotersEntity votersEntity, HttpServletRequest request, Model m) {
+	public String checkid(@ModelAttribute VotersEntity votersEntity, Model m) {
 
 		String id = user.checkid(votersEntity);
+		
+		
 		if (id == "success") {
+			int deleteid=votersEntity.getId();
+			this.user.deleteCheckid(deleteid);
+			
 			List<NewElecCandi> list = this.user.getcandi();
 			m.addAttribute("list", list);
 			return "vote";
-		} else {
-			return "error";
-		}
+		} 
 
+		else {
+			return "userError";
+		}
+		
 	}
 	
-	@RequestMapping("/vote")  
+	@RequestMapping("/userError")
+	public String userError()
+	{
+		return "userError";
+	}
+	
+
+	@RequestMapping("/vote")
 	public String vote() {
 		return "vote";
 	}
