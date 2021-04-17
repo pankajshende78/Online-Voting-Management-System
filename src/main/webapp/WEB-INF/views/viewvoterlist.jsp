@@ -10,7 +10,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<title>Insert title here</title>
+<title>View Voter List</title>
 
 <style>
 body  {
@@ -29,7 +29,6 @@ body  {
 	</nav>
 	</div><br>
 
-
 <div class="container mt-1">
 
 		<div class="row">
@@ -37,10 +36,29 @@ body  {
 
 			<div class="col-md 15">
 <h1 class="text-center md-2 text-white">Voters</h1>
+
+<div class="col-md-8.1 offset-md-9">
+
+ <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search.."  >
+</div>
 				<table class="table">
+ <div class="col-md-9">
+ 						
+                        
+                        
+                        <script>
+                            $(document).ready(function () {
+                                $("#myInput").on("keyup", function () {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#myTable tr").filter(function () {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            });
+                        </script>
+                    </div> 
 
-
-					<table class="table">
+					<table class="table" id="myTable">
 						<thead class="thead-light">
 							<tr>
 								<th scope="col">ID</th>
@@ -65,7 +83,7 @@ body  {
 
 <div class="container">
 
-				<a href="givevote" class="btn btn-primary">Give vote</a> </div>
+				<a href="Givevotelogin" class="btn btn-primary">Give vote</a> </div>
 
 <div class="container text-right" align="right">
 

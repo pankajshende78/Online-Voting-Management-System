@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Error Page</title>
   <%@include file="./base.jsp"%>
 </head>
 <body >
@@ -21,7 +21,7 @@
 <br>
 <div class="container text-center" align="center">
 
-					<a href="" class="btn btn-outline-danger">back to website</a> <br> 
+					<a href="b" class="btn btn-outline-danger">back to website</a> <br> 
 
 
 </body>

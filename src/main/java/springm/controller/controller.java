@@ -26,6 +26,12 @@ public class controller {
 	public String firstpage() {
 		return "index";
 	}
+
+	@RequestMapping("/b")
+	public String back() {
+		return "index";
+	}
+	
 	
 	@RequestMapping("/homepage")
 	public String login() {

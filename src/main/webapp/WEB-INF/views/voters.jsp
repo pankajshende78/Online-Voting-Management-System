@@ -4,13 +4,30 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Voters</title>
 <%@include file="./base.jsp"%>
 
 </head>
 <body bgcolor="pink">
 <br>
+<script>
+		function validateform() {
+			var id = document.myform.id.value;
+			var name = document.myform.name.value;
+			
 
+			if (id == null || id == "") {
+				alert("Id can't be blank");
+				return false;
+			} else if (name == null || name == "") {
+				alert("Name can't be blank");
+				return false;
+			} 
+
+		}
+
+		
+	</script>
 	
 	<jsp:include page="AdminNav.jsp"></jsp:include>
 	
@@ -28,7 +45,7 @@
 
 					<div class="form-group">
 						<label for="name">Enter Voter ID </label><input type="text"
-							class="form-control" id="name" aria-describedbr="emailHelp"
+							class="form-control" id="id" aria-describedbr="emailHelp"
 							name="id" placeholder="Enter Voter ID Here">
 					</div>
 
@@ -43,7 +60,7 @@
 
 
 
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary" onclick="myfunction()">Submit</button>
 						<button type="reset" class="btn btn-primary">Reset</button>
 					</div>
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Home Page</title>
 <style>
 body  {
   background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
@@ -91,7 +91,7 @@ body  {
 			
 			<a href="newregister" class="btn btn-outline-primary">Sign up</a>
 
-				<a href="" class="btn btn-outline-danger">Back</a>
+				<a href="b" class="btn btn-outline-danger">Back</a>
 </div>
 
 			</div>

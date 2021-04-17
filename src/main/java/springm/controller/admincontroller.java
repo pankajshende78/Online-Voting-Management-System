@@ -2,6 +2,7 @@ package springm.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -93,6 +94,7 @@ public class admincontroller {
 	public String getList(Model m) {
 
 		List<candivote> view = user.getlist();
+
 		m.addAttribute("view", view);
 
 		return "result";
@@ -108,32 +110,43 @@ public class admincontroller {
 	}
 
 	@RequestMapping(path = "/checkid", method = RequestMethod.POST)
-	public String checkid(@ModelAttribute VotersEntity votersEntity, Model m) {
-
+	public String checkid(@ModelAttribute VotersEntity votersEntity, newregister newregister, Model m,HttpServletRequest request) {
+		String name = this.user.CheckName(newregister);
 		String id = user.checkid(votersEntity);
-		
-		
-		if (id == "success") {
-			int deleteid=votersEntity.getId();
+		if (name == "success") {
+
+		return "givevote";
+			
+
+		} else if(id == "success"){
+			
+			int deleteid = votersEntity.getId();
 			this.user.deleteCheckid(deleteid);
+			
+			
 			
 			List<NewElecCandi> list = this.user.getcandi();
 			m.addAttribute("list", list);
 			return "vote";
-		} 
-
-		else {
-			return "userError";
-		}
 		
+		
+
+		}
+		else {
+			return  "userError";
+			
+		}
 	}
-	
+
 	@RequestMapping("/userError")
-	public String userError()
-	{
+	public String userError() {
 		return "userError";
 	}
-	
+
+	@RequestMapping("/Givevotelogin")
+	public String Givevotelogin() {
+		return "Give_vote_login";
+	}
 
 	@RequestMapping("/vote")
 	public String vote() {

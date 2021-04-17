@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
 
 
-	<a class="navbar-brand text-white float-right" href="">Logout</a>
+	<a class="navbar-brand text-white float-right" href="b">Logout</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"

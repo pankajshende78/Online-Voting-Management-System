@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Contact Page</title>
   <%@include file="./base.jsp"%>
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -18,7 +18,8 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   
-  <link href="assets/css/login_style.css" rel="stylesheet">
+  <link href="assets/css/login_style.css" rel="stylesheet">	 
+
   <style>
 body  {
   background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
@@ -27,20 +28,25 @@ body  {
 </style>
 </head>
 <body>
-	
 
+  <script>
+  function showAlert() {
+    var myText = "Thank you for contact us";
+    alert (myText);
+  }
+  </script>
 
   <header id="header" class="fixed-top ">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">The Vote</a></h1>
+      <h1 class="logo"><a href="b">The Vote</a></h1>
      
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li ><a href="userlogin">CheckName</a></li>
        
-          <li><a href="givevote">Give Vote</a></li>
+          <li><a href="Givevotelogin">Give Vote</a></li>
           <li class="active" ><a href="#contact">Contact</a></li>
 
         </ul>
@@ -120,9 +126,7 @@ body  {
 						<br>
 						<div class="container text-center">
 
-
-
-							<button type="submit" class="btn btn-primary">Sent Message</button>
+							<button type="submit" class="btn btn-primary" onclick="showAlert()">Sent Message</button>
 							<button type="reset" class="btn btn-primary">Reset</button>
 						</div>
 
@@ -139,10 +143,10 @@ body  {
 							<p class="text-white">Pankaj Shende</p></li>
 
 						<li><i class="fas fa-phone mt-4 fa-2x text-white"></i>
-							<p class="text-white" >+ 91 XXXXXX9121</p></li>
+							<p class="text-white" >Thane, India</p></li>
 
 						<li><i class="fas fa-envelope mt-4 fa-2x text-white "></i>
-							<p class="text-white">PankajShende@examle</p></li>
+							<p class="text-white">Shendepankaj78@gmail.com</p></li>
 					</ul>
 				</div>
 

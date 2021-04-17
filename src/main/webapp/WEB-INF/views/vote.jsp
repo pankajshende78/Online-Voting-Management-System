@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Vote</title>
 <%@ page isELIgnored="false"%>
 <%@include file="./base.jsp"%>
 
@@ -13,7 +13,14 @@
 </head>
 <body>
 
-<!-- For demo purpose -->
+ <script>
+  function showAlert() {
+    var myText = "Thank you for voting";
+    alert (myText);
+  }
+  </script>
+
+
 <div class="container py-5">
     <div class="row text-center text-white">
         <div class="col-lg-8 mx-auto">
@@ -42,7 +49,7 @@
 								<p class="card-text">${p.name}</p>
 								
 								<button type="submit" name="name" value="${p.name}"
-									class="btn btn-danger">Give Vote</button>
+									class="btn btn-danger" onclick="showAlert()">Give Vote</button>
 									<h5 class="mb-0">${p.topic}</h5><span class="small text-uppercase text-muted">${p.phone}</span>
             </div>
         </div>

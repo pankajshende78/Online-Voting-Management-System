@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Error Page</title>
   <%@include file="./base.jsp"%>
 </head>
 <body >
@@ -13,7 +13,7 @@
 <div align="center" >
 <font color="red" style="italic" >
 <h1>Opps !</h1>
-<h1>Your Account Number Not Found</h1>
+<h1>Your Account Not Found</h1>
 <p>Sorry ! an error has Occured , Requested page not found! </p>
 </font>
 </div>
@@ -21,7 +21,7 @@
 <br>
 <div class="container text-center" align="center">
 
-					<a href="" class="btn btn-outline-danger">back to website</a> <br> 
+					<a href="b" class="btn btn-outline-danger">back to website</a> <br> 
 
 
 </body>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Update Form</title>
 <%@ page isELIgnored="false"%>
 <%@include file="./base.jsp"%>
 </head>

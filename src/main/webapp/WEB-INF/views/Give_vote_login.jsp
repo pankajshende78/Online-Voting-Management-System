@@ -29,7 +29,7 @@
 
 <style>
 body  {
-  background-image: url("assets/img/bg.png");
+  background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
   background-color: #cccccc;
 }
 </style>
@@ -40,12 +40,14 @@ body  {
 <body bgcolor="pink">
 	<script>
 		function validateform() {
-			var id = document.myform.id.value;
+			var id = document.myform.name.value;
 
 			if (id == null || id == "") {
-				alert("Voter ID can't be blank");
+				alert("Email ID can't be blank");
 				return false;
 			}
+
+		
 
 		}
 	</script>
@@ -59,7 +61,18 @@ body  {
 	<header id="header" class="fixed-top ">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      
+      <h1 class="logo"><a href="b">The Vote</a></h1>
+     
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li  ><a href="userlogin">Home</a></li>
+       
+          <li class="active"><a href="givevote">Give Vote</a></li>
+          <li><a href="contact">Contact</a></li>
+
+        </ul>
+      </nav>
  		
  		
 		 <a href="homepage" class="get-started-btn scrollto">Logout</a>
@@ -73,7 +86,7 @@ body  {
 
 	<div class="row">
 		<div class="col-md-4 offset-md-4">
-			<h1 class="text-center mb-3 text-white">Please Enter Voter ID</h1>
+			<h1 class="text-center mb-3 text-white">Please Enter Your Vaild Email Id</h1>
 			<hr>
 			
 			<form action="checkid" method="post" name="myform"
@@ -81,9 +94,9 @@ body  {
 
 			
 				<div class="form-group text-white">
-					<label for="name">Enter Your Voter ID</label><input type="text"
-						class="form-control" id="name" name="id"
-						placeholder="Enter Voter ID Here">
+					<label for="name">Enter Your Email Id</label><input type="text"
+						class="form-control" id="name" name="email"
+						placeholder="Enter Email ID Here">
 				</div>
 				<br>
 
@@ -97,10 +110,7 @@ body  {
 		</div>
 	</div>
 	<br>
-	<div class="container text-center text-danger" >
-
-		<h4>Note : If you are give vote once , You will not eligible Again.  </h4>
-	</div>
+	
  
 	<div class="container text-right" >
 

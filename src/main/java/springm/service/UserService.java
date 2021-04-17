@@ -33,6 +33,11 @@ public class UserService {
 		return this.userdao.checklogin(newregister);
 
 	}
+	
+	public String CheckName(newregister newregister) {
+		return this.userdao.checkname(newregister);
+
+	}
 
 	public String checkid(VotersEntity votersEntity) {
 		return this.userdao.checkid(votersEntity);

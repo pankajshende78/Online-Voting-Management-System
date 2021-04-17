@@ -37,13 +37,20 @@
 
 <body>
 
+  <script>
+  function showAlert() {
+    var myText = "Thank you for contact us";
+    alert (myText);
+  }
+  </script>
+
 
 	<header id="header" class="fixed-top ">
 		<div
 			class="container-fluid d-flex align-items-center justify-content-between">
 
 			<h1 class="logo">
-				<a href="index.html">The Vote</a>
+				<a href="b">The Vote</a>
 			</h1>
 
 
@@ -51,7 +58,7 @@
 				<ul>
 					<li class="active"><a href="#header">CheckName</a></li>
 
-					<li><a href="givevote">Give Vote</a></li>
+					<li><a href="Givevotelogin">Give Vote</a></li>
 					<li><a href="#contact">Contact</a></li>
 
 				</ul>
@@ -151,7 +158,7 @@
 
 
 
-							<button type="submit" class="btn btn-primary">Sent Message</button>
+							<button type="submit" class="btn btn-primary" onclick="showAlert()">Sent Message</button>
 							<button type="reset" class="btn btn-primary">Reset</button>
 						</div>
 
@@ -168,10 +175,10 @@
 							<p class="text-black">Pankaj Shende</p></li>
 
 						<li><i class="fas fa-phone mt-4 fa-2x text-black"></i>
-							<p class="text-black" >+ 91 XXXXXX9121</p></li>
+							<p class="text-black" >Thane, India</p></li>
 
 						<li><i class="fas fa-envelope mt-4 fa-2x text-black"></i>
-							<p class="text-black">PankajShende@examle</p></li>
+							<p class="text-black">Shendepankaj78@gmail.com</p></li>
 					</ul>
 				</div>
 
@@ -186,7 +193,12 @@
 	
 
 
-	<footer id="footer"> </footer>
+	<footer id="footer">
+	
+    <div class="footer-copyright text-center py-3">2021 :
+    <a href="b"> Devloped by pankaj shende</a> </div>
+	
+	 </footer>
 
 	<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 	<div id="preloader"></div>

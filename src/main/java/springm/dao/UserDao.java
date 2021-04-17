@@ -1,6 +1,7 @@
 package springm.dao;
 
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Lob;
@@ -57,9 +58,6 @@ public class UserDao {
 		Integer id = (Integer) this.hibernateTemplate.save(votersEntity);
 		return id;
 	}
-	
-	
-	
 
 	@Transactional
 	public int candisave(candivote candivote) {
@@ -92,6 +90,31 @@ public class UserDao {
 		}
 
 	}
+	
+	@Transactional
+	public String checkname(newregister newregister) {
+
+		String email = newregister.getEmail();
+		//String password = newregister.getPassword();
+
+		Session s = sessionFactory.getCurrentSession();
+
+		String q = "from newregister as s where s.email=:email";
+
+		Query query = s.createQuery(q);
+
+		query.setParameter("email", newregister.getEmail());
+		//query.setParameter("password", newregister.getPassword());
+
+		List r = query.list();
+
+		if (r != null && (r.size() > 0)) {
+			return "success";
+		} else {
+			return "fail";
+		}
+
+	}
 
 	public List<VotersEntity> getvoters() {
 
@@ -102,11 +125,8 @@ public class UserDao {
 
 	@Transactional
 	public List<candivote> checkvote() {
-		
+
 		List<candivote> list = this.hibernateTemplate.loadAll(candivote.class);
-
-		List<candivote> check = this.hibernateTemplate.loadAll(candivote.class);
-
 		return list;
 
 	}
@@ -138,14 +158,12 @@ public class UserDao {
 		Contact c = this.hibernateTemplate.load(Contact.class, id);
 		this.hibernateTemplate.delete(c);
 	}
-	
+
 	@Transactional
-	public void deleteCheckid(int deleteid)
-	{
-		VotersEntity v= this.hibernateTemplate.load(VotersEntity.class,deleteid);
-		
-	 this.hibernateTemplate.delete(v);
-		
+	public void deleteCheckid(int deleteid) {
+		VotersEntity v = this.hibernateTemplate.load(VotersEntity.class, deleteid);
+		this.hibernateTemplate.delete(v);
+
 	}
 
 	@Transactional
@@ -162,20 +180,19 @@ public class UserDao {
 		Session s = sessionFactory.getCurrentSession();
 		String q = "from VotersEntity as s where s.id=:id";
 		Query query = s.createQuery(q);
-		
+
 		query.setParameter("id", votersEntity.getId());
-		
+
 		List r = query.list();
 
 		if (r != null && (r.size() > 0)) {
-			
+
 			return "success";
-				
+
 		} else {
 			return "fail";
 		}
-		
-		
+
 	}
 
 }
