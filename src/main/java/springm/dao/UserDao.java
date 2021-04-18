@@ -24,6 +24,7 @@ import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.candivote;
 import springm.model.newregister;
+import springm.model.requestID;
 
 @Repository
 public class UserDao {
@@ -43,6 +44,12 @@ public class UserDao {
 	@Transactional
 	public int savecon(Contact contact) {
 		Integer id = (Integer) this.hibernateTemplate.save(contact);
+		return id;
+	}
+
+	@Transactional
+	public int saveRequest(requestID requestID) {
+		Integer id = (Integer) this.hibernateTemplate.save(requestID);
 		return id;
 	}
 
@@ -90,12 +97,12 @@ public class UserDao {
 		}
 
 	}
-	
+
 	@Transactional
 	public String checkname(newregister newregister) {
 
 		String email = newregister.getEmail();
-		//String password = newregister.getPassword();
+		// String password = newregister.getPassword();
 
 		Session s = sessionFactory.getCurrentSession();
 
@@ -104,7 +111,7 @@ public class UserDao {
 		Query query = s.createQuery(q);
 
 		query.setParameter("email", newregister.getEmail());
-		//query.setParameter("password", newregister.getPassword());
+		// query.setParameter("password", newregister.getPassword());
 
 		List r = query.list();
 
@@ -146,6 +153,11 @@ public class UserDao {
 		return cont;
 	}
 
+	public List<requestID> getreq() {
+		List<requestID> cont = this.hibernateTemplate.loadAll(requestID.class);
+		return cont;
+	}
+
 	public NewElecCandi loadcandi(int pid) {
 
 		return this.hibernateTemplate.get(NewElecCandi.class, pid);
@@ -158,10 +170,36 @@ public class UserDao {
 		Contact c = this.hibernateTemplate.load(Contact.class, id);
 		this.hibernateTemplate.delete(c);
 	}
+	@Transactional
+	public void deletevoter(int id) {
+
+		VotersEntity c = this.hibernateTemplate.load(VotersEntity.class, id);
+		this.hibernateTemplate.delete(c);
+	}
+
+	@Transactional
+	public void deletereq(int id) {
+
+		requestID c = this.hibernateTemplate.load(requestID.class, id);
+		this.hibernateTemplate.delete(c);
+	}
+
+	@Transactional
+	public void deleteres(int id) {
+
+		candivote c = this.hibernateTemplate.load(candivote.class, id);
+		this.hibernateTemplate.delete(c);
+	}
 
 	@Transactional
 	public void deleteCheckid(int deleteid) {
 		VotersEntity v = this.hibernateTemplate.load(VotersEntity.class, deleteid);
+		this.hibernateTemplate.delete(v);
+
+	}
+	@Transactional
+	public void deletecandi(int deleteid) {
+		NewElecCandi v = this.hibernateTemplate.load(NewElecCandi.class, deleteid);
 		this.hibernateTemplate.delete(v);
 
 	}

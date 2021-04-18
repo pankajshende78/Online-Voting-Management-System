@@ -89,9 +89,9 @@ body  {
 
 			<div class="container text-center" align="center">
 			
-			<a href="newregister" class="btn btn-outline-primary">Sign up</a>
+			<a href="newregister" class="btn btn-primary">Sign up</a>
 
-				<a href="b" class="btn btn-outline-danger">Back</a>
+				<a href="b" class="btn btn-danger">Back</a>
 </div>
 
 			</div>

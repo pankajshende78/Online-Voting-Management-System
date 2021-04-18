@@ -109,7 +109,7 @@ body {
 			</form>
 			<div class="container text-right" align="right">
 
-				<a href="b" class="btn btn-outline-danger">Back</a>
+				<a href="b" class="btn btn-danger">Back</a>
 			</div>
 			<br>
 			

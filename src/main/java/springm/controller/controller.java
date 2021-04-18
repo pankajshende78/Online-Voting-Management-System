@@ -14,6 +14,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import springm.model.Contact;
 import springm.model.VotersEntity;
 import springm.model.newregister;
+import springm.model.requestID;
 import springm.service.UserService;
 
 @Controller
@@ -62,7 +63,7 @@ public class controller {
 			if (id > 0) {
 
 				RedirectView redirectView = new RedirectView();
-				redirectView.setUrl(request.getContextPath() + "/");
+				redirectView.setUrl(request.getContextPath() + "/homepage");
 				return redirectView;
 			} else {
 
@@ -131,6 +132,22 @@ public class controller {
 			redirectView.setUrl(request.getContextPath() + "/error");
 			return redirectView;
 		}
+	}
+		
+		@RequestMapping(path = "/request", method = RequestMethod.POST)
+		public RedirectView saverequest(@ModelAttribute requestID requestID, HttpServletRequest request) {
+
+			int id = this.user.saveRequest(requestID);
+
+			if (id > 0) {
+				RedirectView redirectView = new RedirectView();
+				redirectView.setUrl(request.getContextPath() + "/userlogin");
+				return redirectView;
+			} else {
+				RedirectView redirectView = new RedirectView();
+				redirectView.setUrl(request.getContextPath() + "/error");
+				return redirectView;
+			}
 
 	}
 

@@ -11,7 +11,7 @@
 	<br>
 
 
-<jsp:include page="AdminNav.jsp"></jsp:include>
+<jsp:include page="AdNav.jsp"></jsp:include>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">

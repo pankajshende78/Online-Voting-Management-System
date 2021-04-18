@@ -13,6 +13,7 @@ import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.candivote;
 import springm.model.newregister;
+import springm.model.requestID;
 
 @Service
 public class UserService {
@@ -82,14 +83,34 @@ public class UserService {
 		return this.userdao.savecon(contact);
 	}
 
+
+	public int saveRequest(requestID requestID) {
+		return this.userdao.saveRequest(requestID);
+	}
+	
 	public List<Contact> getcont() {
 		return this.userdao.getcont();
+	}
+	
+	public List<requestID> getreq() {
+		return this.userdao.getreq();
 	}
 
 	public void deletedata(int id) {
 		this.userdao.deletedata(id);
 	}
-	
+	public void deletecandi(int id) {
+		this.userdao.deletecandi(id);
+	}
+	public void deletereq(int id) {
+		this.userdao.deletereq(id);
+	}
+	public void deletevoter(int id) {
+		this.userdao.deletevoter(id);
+	}
+	public void deleteres(int id) {
+		this.userdao.deleteres(id);
+	}
 	
 	public void deleteCheckid(int deleteid)
 	{

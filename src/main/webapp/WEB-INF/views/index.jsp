@@ -59,8 +59,8 @@
  
   <section id="hero">
     <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-      <h1>YOUR VOTE IS YOUR VICE.</h1>
-     <h2>The vote is the most powerful nonviolent tool we have.</h2> 
+      <h1> YOUR VICE</h1>
+     <h2>Shape tommorow by voting today</h2> 
       <div class="d-flex">
         <a href="newregister" class="btn-get-started scrollto">Create Your Account</a>
       </div>

@@ -26,6 +26,7 @@ import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.candivote;
 import springm.model.newregister;
+import springm.model.requestID;
 import springm.service.UserService;
 
 @Controller
@@ -42,6 +43,11 @@ public class admincontroller {
 	@RequestMapping("/voters")
 	public String voters() {
 		return "voters";
+	}
+
+	@RequestMapping("/voterlist")
+	public String voterlist() {
+		return "IDVoters";
 	}
 
 	@RequestMapping(path = "/savecandidate", method = RequestMethod.POST)
@@ -81,6 +87,15 @@ public class admincontroller {
 
 	}
 
+	@RequestMapping("/voterlists")
+	public String voterlist(Model m) {
+
+		List<VotersEntity> viewvoter = user.getproduct();
+		m.addAttribute("viewvoter", viewvoter);
+
+		return "IDVoters";
+	}
+
 	@RequestMapping("/viewvoterlist")
 	public String getvoters(Model m) {
 
@@ -110,32 +125,36 @@ public class admincontroller {
 	}
 
 	@RequestMapping(path = "/checkid", method = RequestMethod.POST)
-	public String checkid(@ModelAttribute VotersEntity votersEntity, newregister newregister, Model m,HttpServletRequest request) {
+	public String checkid(@ModelAttribute VotersEntity votersEntity, newregister newregister, Model m,
+			HttpServletRequest request) {
 		String name = this.user.CheckName(newregister);
 		String id = user.checkid(votersEntity);
 		if (name == "success") {
 
-		return "givevote";
-			
+			return "givevote";
 
-		} else if(id == "success"){
-			
+		} else if (id == "success") {
+
 			int deleteid = votersEntity.getId();
 			this.user.deleteCheckid(deleteid);
-			
-			
-			
+
 			List<NewElecCandi> list = this.user.getcandi();
 			m.addAttribute("list", list);
+
 			return "vote";
-		
-		
+
+		} else {
+			return "userError";
 
 		}
-		else {
-			return  "userError";
-			
-		}
+	}
+
+	@RequestMapping("/candidatedata")
+	public String candidateData(Model m) {
+		List<NewElecCandi> list = this.user.getcandi();
+		m.addAttribute("list", list);
+
+		return "candidateData";
 	}
 
 	@RequestMapping("/userError")
@@ -184,6 +203,14 @@ public class admincontroller {
 
 	}
 
+	@RequestMapping("/checkrequest")
+	public String getreqdata(Model m) {
+		List<requestID> conts = this.user.getreq();
+		m.addAttribute("conts", conts);
+		return "requestContactTable";
+
+	}
+
 	@RequestMapping("/delete/{Id}")
 	public RedirectView deleteProduct(@PathVariable("Id") int id, HttpServletRequest request) {
 		this.user.deletedata(id);
@@ -192,11 +219,44 @@ public class admincontroller {
 		return redirectView;
 	}
 
+	@RequestMapping("/deleted/{Id}")
+	public RedirectView deleterequest(@PathVariable("Id") int id, HttpServletRequest request) {
+		this.user.deletereq(id);
+		RedirectView redirectView = new RedirectView();
+		redirectView.setUrl(request.getContextPath() + "/checkrequest");
+		return redirectView;
+	}
+
+	@RequestMapping("/delres/{Id}")
+	public RedirectView deleteres(@PathVariable("Id") int id, HttpServletRequest request) {
+		this.user.deleteres(id);
+		RedirectView redirectView = new RedirectView();
+		redirectView.setUrl(request.getContextPath() + "/result");
+		return redirectView;
+	}
+
 	@RequestMapping("/deletelogin/{Id}")
 	public RedirectView deleteloginUser(@PathVariable("Id") int id, HttpServletRequest request) {
 		this.user.deletedataLogin(id);
 		RedirectView redirectView = new RedirectView();
 		redirectView.setUrl(request.getContextPath() + "/viewloginuser");
+		return redirectView;
+	}
+
+	@RequestMapping("/deletecandi/{Id}")
+	public RedirectView deletecandi(@PathVariable("Id") int id, HttpServletRequest request) {
+		this.user.deletecandi(id);
+		RedirectView redirectView = new RedirectView();
+		redirectView.setUrl(request.getContextPath() + "/candidatedata");
+		return redirectView;
+	}
+	
+	
+	@RequestMapping("/deletevoter/{Id}")
+	public RedirectView deletevoter(@PathVariable("Id") int id, HttpServletRequest request) {
+		this.user.deletevoter(id);
+		RedirectView redirectView = new RedirectView();
+		redirectView.setUrl(request.getContextPath() + "/voterlists");
 		return redirectView;
 	}
 

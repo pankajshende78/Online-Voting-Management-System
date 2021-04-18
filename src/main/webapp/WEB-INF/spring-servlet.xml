@@ -98,6 +98,9 @@
 				<value>
 					springm.model.Contact
 				</value>
+				<value>
+					springm.model.requestID
+				</value>
 			</list>
 
 		</property>

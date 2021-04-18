@@ -39,7 +39,7 @@
 
   <script>
   function showAlert() {
-    var myText = "Thank you for contact us";
+    var myText = "Thank you for request";
     alert (myText);
   }
   </script>
@@ -59,7 +59,8 @@
 					<li class="active"><a href="#header">CheckName</a></li>
 
 					<li><a href="Givevotelogin">Give Vote</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="#contact">Request For ID</a></li>
+						<li><a href="contact">Contact</a></li>
 
 				</ul>
 			</nav>
@@ -74,7 +75,8 @@
 
 	<section id="hero">
 		<div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-			<h1>CHECK YOUR NAME IN VOTER LIST</h1>
+			<h1>CHECK YOUR NAME
+			</h1>
 
 			<div class="d-flex">
 				<a href="viewvoterlist" class="btn-get-started scrollto">HERE </a>
@@ -91,17 +93,15 @@
 		
      <section class="mb-3">
 
-			<h2 class="h1-responsive font-weight-bold text-center my-3 text-black">Contact
-				us</h2>
+			<h2 class="h1-responsive font-weight-bold text-center my-3 text-black">Request for voting ID</h2>
 
-			<p class="text-center w-responsive mx-auto mb-5 text-black">Do you have any
-				questions? Please do not hesitate to contact us directly.</p>
-
+			
+<br><br>
 			<div class="row">
 
 
 				<div class="col-md-7 mb-md-0 mb-5">
-					<form action="savecont" method="POST">
+					<form action="request" method="POST">
 
 
 						<div class="row">
@@ -130,35 +130,21 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="md-form mb-0 text-black">
-									<label for="subject" >Subject</label> <input
-										type="text" placeholder="Enter Subject Here" name="subject"
+									<label for="subject" >Mobile</label> <input
+										type="text" placeholder="Enter mobile number Here" name="mobile"
 										class="form-control">
 
 								</div>
 							</div>
 						</div>
 
-						<div class="row">
-
-
-							<div class="col-md-12">
-
-								<div class="md-form text-black">
-									<label for="message">Your message</label>
-									<textarea type="text" name="message" rows="2"
-										placeholder="Enter Your Message Here"
-										class="form-control md-textarea"></textarea>
-
-								</div>
-
-							</div>
-						</div>
+					
 						<br>
 						<div class="container text-center">
 
 
 
-							<button type="submit" class="btn btn-primary" onclick="showAlert()">Sent Message</button>
+							<button type="submit" class="btn btn-primary" onclick="showAlert()">Send Request</button>
 							<button type="reset" class="btn btn-primary">Reset</button>
 						</div>
 
