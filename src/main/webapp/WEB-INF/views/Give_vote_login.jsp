@@ -34,7 +34,7 @@ body  {
 }
 </style>
 
-
+<%@include file="./base.jsp"%>
 
 </head>
 <body bgcolor="pink">
@@ -84,31 +84,43 @@ body  {
 
 
 
+
 	<div class="row">
-		<div class="col-md-4 offset-md-4">
-			<h1 class="text-center mb-3 text-white">Please Enter Your Vaild Email Id</h1>
-			<hr>
-			
-			<form action="checkid" method="post" name="myform"
-				onsubmit="return validateform()">
+		<div class="container-fluid">
+			<div class="col-md-4 offset-md-4">
 
-			
-				<div class="form-group text-white">
-					<label for="name">Enter Your Email Id</label><input type="text"
-						class="form-control" id="name" name="email"
-						placeholder="Enter Email ID Here">
-				</div>
+				<h1 class="text-center mb-4 text-white">Please Enter Your Vaild Email Id</h1>
+				<hr>
+
+				<form action="checkid" method="post" name="myform"
+					onsubmit="return validateform()">
+
+					<div class="form-group">
+						<label for="name" class="text-white">Enter Your Email ID</label><input type="email"
+							class="form-control" id="name" aria-describedbr="emailHelp"
+							name="email" placeholder="Enter Email ID Here">
+					</div>
+
+
+					<div class="container text-center">
+
+
+
+						<button type="submit" class="btn btn-primary">verify</button>
+						<button type="reset" class="btn btn-primary">Reset</button>
+					</div>
+
+				</form>
+</div>
+</div></div>
 				<br>
+				
+				<hr style="height:2px;border-width:0;color:gray;background-color:red" >
+				
 
-				<div class="container text-center">
+				
 
-
-
-					<button type="submit" class="btn btn-primary" value="display value">Verify</button>
-					<button type="reset" class="btn btn-primary">Reset</button> </div>
-			</form>
-		</div>
-	</div>
+				
 	<br>
 	
  

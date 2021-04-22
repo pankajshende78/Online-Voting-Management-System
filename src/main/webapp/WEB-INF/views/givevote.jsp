@@ -60,7 +60,7 @@ body  {
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       
- 		
+
  		
 		 <a href="homepage" class="get-started-btn scrollto">Logout</a>
 		 
@@ -69,39 +69,40 @@ body  {
   </header>
 	<br><br><br><br>
 
+<div class="row">
+		<div class="container-fluid">
+			<div class="col-md-4 offset-md-4">
+
+				<h1 class="text-center mb-4 text-white">Please Enter Voter ID </h1>
+				<hr>
+
+				<form action="checkid" method="post" name="myform"
+					onsubmit="return validateform()">
+
+					<div class="form-group">
+						<label for="name" class="text-white">Enter Your Voter ID</label><input type="email"
+							class="form-control" id="name" aria-describedbr="emailHelp"
+							name="email" placeholder="Enter Your ID Here">
+					</div>
 
 
-	<div class="row">
-		<div class="col-md-4 offset-md-4">
-			<h1 class="text-center mb-3 text-white">Please Enter Voter ID</h1>
-			<hr>
-			
-			<form action="checkid" method="post" name="myform"
-				onsubmit="return validateform()">
-
-			
-				<div class="form-group text-white">
-					<label for="name">Enter Your Voter ID</label><input type="text"
-						class="form-control" id="name" name="id"
-						placeholder="Enter Voter ID Here">
-				</div>
-				<br>
-
-				<div class="container text-center">
+					<div class="container text-center">
 
 
 
-					<button type="submit" class="btn btn-primary" value="display value">Verify</button>
-					<button type="reset" class="btn btn-primary">Reset</button> </div>
-			</form>
-		</div>
-	</div>
+						<button type="submit" class="btn btn-primary">Verify</button>
+						<button type="reset" class="btn btn-primary">Reset</button>
+					</div>
+
+				</form>
+</div> </div> </div>
+
 	<br>
 	<div class="container text-center text-danger" >
 
-		<h4>Note : If you are give vote once , You will not eligible Again.  </h4>
+		<h4>Note : Yor Are Only Eligible To Vote Onces.</h4>
 	</div>
- 
+ <br>
 	<div class="container text-right" >
 
 		<a href="userlogin" class="btn btn-danger">Back </a> <br>

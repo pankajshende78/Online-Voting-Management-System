@@ -83,7 +83,7 @@ public class controller {
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute newregister newregister, HttpServletRequest request, Model m) {
 
-		if (newregister.getEmail().equals("admin@ad") && newregister.getPassword().equals("admin")) {
+		if (newregister.getEmail().equals("admin@ad") && newregister.getPassword().equals("qwerty@123")) {
 
 			return "adminpage";
 		} else {

@@ -10,6 +10,8 @@ body  {
   background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
   background-color: #cccccc;
 }
+
+
 </style>
 <%@include file="./base.jsp"%>
 </head>
@@ -77,8 +79,9 @@ body  {
 
 				</form>
 
-				<br> <br> <br>
+				<br>
 				
+				<hr style="height:2px;border-width:0;color:gray;background-color:red" >
 				
 
 				</div>

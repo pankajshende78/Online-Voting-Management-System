@@ -58,9 +58,10 @@ body {
 
 	<hr>
 	<div class="row">
+	<div class="container-fluid">
 		<div class="col-md-5 offset-md-3 ">
 			<h1 class="text-center mb-3 text-white ">New Registration Form</h1>
-			<hr>
+			<hr style="height:2px;border-width:0;color:gray;background-color:white">
 			<br>
 			<form action="savenewregister" method="post" name="myform"
 				onsubmit="return myfunction()">
@@ -103,7 +104,7 @@ body {
 
 					<button type="submit" class="btn btn-primary">Submit</button>
 					<button type="reset" class="btn btn-primary">Reset</button>
-
+</div>
 				</div>
 
 			</form>

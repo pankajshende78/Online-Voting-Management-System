@@ -18,7 +18,7 @@
 <body>
 <br>
 
-<jsp:include page="AdminNav.jsp"></jsp:include>
+<jsp:include page="AdNav.jsp"></jsp:include>
 <br>
 
 <div class="container mt-1">

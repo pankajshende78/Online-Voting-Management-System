@@ -29,13 +29,13 @@
 		
 	</script>
 	
-	<jsp:include page="AdminNav.jsp"></jsp:include>
+	<jsp:include page="AdNav.jsp"></jsp:include>
 	
 
 
 
 <div class="row">
-		<div class="container-fluid" ">
+		<div class="container-fluid">
 			<div class="col-md-4 offset-md-4">
 
 				<h1 class="text-center mb-4">Add Voters</h1>
