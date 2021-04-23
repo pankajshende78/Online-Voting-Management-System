@@ -1,15 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Give Vote</title>
+<title>Verification</title>
 
 
-<%@ page isELIgnored="false"%>
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,13 +17,10 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
   
- <link href="assets/css/login_style.css" rel="stylesheet">
- 
- 
- <script src=
-"https://code.jquery.com/jquery-1.12.4.min.js">
-    </script>
+  <link href="assets/css/style.css" rel="stylesheet">
+
 
 <style>
 body  {
@@ -34,101 +29,88 @@ body  {
 }
 </style>
 
-<%@include file="./base.jsp"%>
-
 </head>
 <body bgcolor="pink">
-	<script>
+<br>
+<script>
 		function validateform() {
-			var id = document.myform.name.value;
-
-			if (id == null || id == "") {
-				alert("Email ID can't be blank");
-				return false;
-			}
-
 		
+			var name = document.myform.name.value;
+			
+
+			
+			} if (name == null || name == "") {
+				alert("Email can't be blank");
+				return false;
+			} 
 
 		}
+
+		
 	</script>
 	
 	
-
-
-
-
-	<br>
-	<header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top ">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="b">The Vote</a></h1>
      
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li  ><a href="userlogin">Home</a></li>
-       
-          <li class="active"><a href="givevote">Give Vote</a></li>
-          <li><a href="contact">Contact</a></li>
+     <nav class="nav-menu d-none d-lg-block">
+				<ul>
+					<li ><a href="userlogin">Home</a></li>
 
-        </ul>
-      </nav>
+					<li><a href="Givevotelogin">Give Vote</a></li>
+					
+						<li class="active"><a href="contact">Contact</a></li>
+
+				</ul>
+			</nav>
+
+     
  		
- 		
-		 <a href="homepage" class="get-started-btn scrollto">Logout</a>
+		 <a href="homepage" class="get-started-btn scrollto">Login</a>
 		 
 
     </div>
   </header>
-	<br><br><br><br>
 
+			
+<br>
 
-
-
-	<div class="row">
+<div class="row">
 		<div class="container-fluid">
 			<div class="col-md-4 offset-md-4">
 
-				<h1 class="text-center mb-4 text-white">Please Enter Your Vaild Email Id</h1>
-				<hr>
+				<h1 class="text-center mb-4 text-white">Enter Your Vaild Email ID</h1>
 
-				<form action="checkid" method="post" name="myform"
+				<form action="voters" method="post" name="myform"
 					onsubmit="return validateform()">
 
-					<div class="form-group">
-						<label for="name" class="text-white">Enter Your Email ID</label><input type="email"
-							class="form-control" id="name" aria-describedbr="emailHelp"
-							name="email" placeholder="Enter Email ID Here">
+				
+					<div class="form-group text-white">
+						<label for="email">Enter Your Email ID</label><input type="text"
+							class="form-control" id="name" name="email"
+							placeholder="Enter Email ID Here">
 					</div>
-
 
 					<div class="container text-center">
 
 
 
-						<button type="submit" class="btn btn-primary">verify</button>
+						<button type="submit" class="btn btn-primary" >verify</button>
 						<button type="reset" class="btn btn-primary">Reset</button>
 					</div>
 
 				</form>
-</div>
-</div></div>
-				<br>
-				
-				<hr style="height:2px;border-width:0;color:gray;background-color:red" >
-				
 
-				
 
-				
-	<br>
-	
- 
-	<div class="container text-right" >
 
-		<a href="userlogin" class="btn btn-danger">Back </a> <br>
+			</div>
+			
+		</div>
 	</div>
- 
+
+
 </body>
-	
 </html>

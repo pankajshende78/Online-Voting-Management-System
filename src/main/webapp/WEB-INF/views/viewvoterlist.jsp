@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>View Voter List</title>
 <meta charset="ISO-8859-1">
 
 <%@ page isELIgnored="false"%>
@@ -10,7 +11,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<title>View Voter List</title>
+
 
 <style>
 body  {
@@ -23,7 +24,7 @@ body  {
 <body>
 <br>
 <div class="text-center">
-		<nav class="navbar navbar-dark bg-secondary ">
+		<nav class="navbar navbar-dark bg-warning">
 			<div class="navbar-brand">Online Voting Managment</div>
 	</div>
 	</nav>

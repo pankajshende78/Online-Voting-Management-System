@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Page</title>
 <%@include file="./base.jsp"%>
 </head>
 <body bgcolor="pink">

@@ -16,17 +16,7 @@
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	 ">
 
-
-
-
-
-	
-
-
 	<tx:annotation-driven />
-
-
-
 
 	<context:component-scan base-package="springm"></context:component-scan>
 
@@ -36,12 +26,13 @@
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	
-	
- <mvc:annotation-driven/>
- 
-<mvc:resources location="/WEB-INF/assets/" mapping="/assets/**"></mvc:resources>
-	
+
+
+	<mvc:annotation-driven />
+
+	<mvc:resources location="/WEB-INF/assets/"
+		mapping="/assets/**"></mvc:resources>
+
 
 
 	<bean
@@ -120,18 +111,5 @@
 		name="transactionManager">
 		<property name="sessionFactory" ref="factory"></property>
 	</bean>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </beans>

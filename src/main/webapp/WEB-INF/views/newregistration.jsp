@@ -47,7 +47,7 @@ body {
 	<br>
 
 	<div class="text-center">
-		<nav class="navbar navbar-dark bg-secondary ">
+		<nav class="navbar navbar-dark bg-warning ">
 			<div class="navbar-brand">Online Voting Managment</div>
 	</div>
 	</nav>

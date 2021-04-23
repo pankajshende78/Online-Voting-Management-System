@@ -5,27 +5,25 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Verification</title>
-
-
-<%@include file="./base.jsp"%>
   <style>
 body  {
-  background-image: url("assets/img/bg.png");
+  background-image: url("assets/img/stefan-moertl-DkEJKHwgxKw-unsplash.jpg");
   background-color: #cccccc;
 }
 </style>
 
 
+<%@include file="./base.jsp"%>
 </head>
 
 
-<body bgcolor="black"> 
+<body>
 
 <br>
 
 	<div class="text-center">
-		<nav class="navbar navbar-dark bg-primary">
-			<div class="navbar-brand">Online Voting Managment</div>
+		<nav class="navbar navbar-dark bg-warning">
+			<div class="navbar-brand ">Online Voting Managment</div>
 	</div>
 	</nav>
 	</div>
@@ -37,7 +35,7 @@ body  {
 			
 
 			 if (name == null || name == "") {
-				alert("ID can't be blank");
+				alert("Email can't be blank");
 				return false;
 			} 
 
@@ -49,7 +47,7 @@ body  {
 		<div class="container-fluid">
 			<div class="col-md-4 offset-md-4">
 
-				<h1 class="text-center mb-4 text-white">Enter Your Voter ID</h1>
+				<h1 class="text-center mb-4 text-white">Enter Your Valid Email ID</h1>
 				<hr>
 
 				<form action="checkid" method="post" name="myform"
@@ -58,9 +56,9 @@ body  {
 					
 
 					<div class="form-group text-white">
-						<label for="name">Enter Your Voter ID</label><input type="text"
+						<label for="name">Enter Your Email ID</label><input type="text"
 							class="form-control" id="name" aria-describedbr="emailHelp"
-							name="email" placeholder="EnterID Here">
+							name="email" placeholder="Enter Email Here">
 					</div>
 					
 
@@ -74,12 +72,7 @@ body  {
 
 				</form>
 
-				<br>
-	<div class="container text-center text-danger" >
-
-		<h4>Note : Yor Are Only Eligible To Vote Onces.</h4>
-	</div>
- <br>
+				<br> <br> <br>
 
 				<div class="container text-right" align="right">
 

@@ -90,6 +90,7 @@ public class controller {
 			String id = user.checkservuser(newregister);
 
 			if (id == "success") {
+				
 				return "userlogin";
 			} else {
 

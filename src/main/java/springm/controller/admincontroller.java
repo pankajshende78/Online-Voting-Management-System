@@ -133,7 +133,7 @@ public class admincontroller {
 
 			return "givevote";
 
-		} else if (id == "success") {
+		}  if (id == "success") {
 
 			int deleteid = votersEntity.getId();
 			this.user.deleteCheckid(deleteid);
@@ -164,7 +164,7 @@ public class admincontroller {
 
 	@RequestMapping("/Givevotelogin")
 	public String Givevotelogin() {
-		return "Give_vote_login";
+		return "GiveVoteLogin";
 	}
 
 	@RequestMapping("/vote")

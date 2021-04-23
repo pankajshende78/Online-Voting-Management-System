@@ -5,7 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Contact Page</title>
-  <%@include file="./base.jsp"%>
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
@@ -18,7 +17,9 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   
-  <link href="assets/css/login_style.css" rel="stylesheet">	 
+  <link href="assets/css/style.css" rel="stylesheet">
+ 
+<%@include file="./base.jsp"%>	 
 
   <style>
 body  {
@@ -26,9 +27,24 @@ body  {
   background-color: #cccccc;
 }
 </style>
+
 </head>
 <body>
+<br>
+	<header id="header" class="fixed-top ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
 
+      <h1 class="logo"><a href="b">The Vote</a></h1>
+     
+
+   
+		 <a href="userlogin" class="get-started-btn scrollto">Back</a>
+		 
+
+    </div>
+  </header>
+	
+<br>
   <script>
   function showAlert() {
     var myText = "Thank you for contact us";
@@ -36,28 +52,9 @@ body  {
   }
   </script>
 
-  <header id="header" class="fixed-top ">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="b">The Vote</a></h1>
-     
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li ><a href="userlogin">CheckName</a></li>
-       
-          <li><a href="Givevotelogin">Give Vote</a></li>
-          <li class="active" ><a href="#contact">Contact</a></li>
-
-        </ul>
-      </nav>
- 		
- 		
-		 <a href="homepage" class="get-started-btn scrollto">Logout</a>
-		 
-
-    </div>
-  </header>
+	
+	
 <div class="container mt-4">
 
 		<section class="mb-3">
@@ -155,7 +152,7 @@ body  {
 
 		</section>
 
-	</div>
+	</div> 
 
 
 </body>
