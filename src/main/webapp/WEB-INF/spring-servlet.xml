@@ -19,7 +19,7 @@
 	<tx:annotation-driven />
 
 	<context:component-scan base-package="springm"></context:component-scan>
-
+ 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver">
@@ -92,6 +92,9 @@
 				<value>
 					springm.model.requestID
 				</value>
+				<value>
+					springm.model.otp
+				</value>
 			</list>
 
 		</property>
@@ -111,5 +114,7 @@
 		name="transactionManager">
 		<property name="sessionFactory" ref="factory"></property>
 	</bean>
+	
+	
 
 </beans>

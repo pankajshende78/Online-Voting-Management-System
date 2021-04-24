@@ -50,7 +50,7 @@ body  {
 				<h1 class="text-center mb-4 text-white">Enter Your Valid Email ID</h1>
 				<hr>
 
-				<form action="checkid" method="post" name="myform"
+				<form action="checkmail" method="post" name="myform"
 					onsubmit="return validateform()">
 
 					

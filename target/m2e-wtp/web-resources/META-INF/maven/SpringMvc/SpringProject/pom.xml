@@ -1,12 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>SpringMvc</groupId>
+  <groupId>SpringMvc</groupId> 
   <artifactId>SpringProject</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>SpringProject Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -64,15 +67,23 @@
 
 
 <!-- 
-		https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl
-		<dependency>
-			<groupId>javax.servlet.jsp.jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
- -->
- 
- 
+  <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.5</version>
+       </dependency>
+        --> 
+        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+   
+     
+       <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version>
+</dependency>
+       
+
  <dependency>
     <groupId>jstl</groupId>
     <artifactId>jstl</artifactId>
@@ -97,15 +108,15 @@
 		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
 
 
-<!-- 
-		https://mvnrepository.com/artifact/org.springframework/spring-context
+
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>5.2.4.RELEASE</version>
 		</dependency>
- -->
-    
+
+     
   </dependencies>
   <build>
     <finalName>SpringProject</finalName>

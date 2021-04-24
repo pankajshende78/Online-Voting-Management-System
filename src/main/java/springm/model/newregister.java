@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.ForeignKey;
+
 @Entity
 public class newregister {
 	
@@ -16,6 +18,7 @@ public class newregister {
 	private String email;
 	private long phone;
 	private String name;
+
 	public String getName() {
 		return name;
 	}
@@ -24,11 +27,15 @@ public class newregister {
 		this.name = name;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "newregister [id=" + id + ", email=" + email + ", phone=" + phone + ", name=" + name + ", password="
 				+ password + ", repassword=" + repassword + "]";
 	}
+
+
 
 	private String password;
 	

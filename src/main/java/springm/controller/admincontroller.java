@@ -125,15 +125,11 @@ public class admincontroller {
 	}
 
 	@RequestMapping(path = "/checkid", method = RequestMethod.POST)
-	public String checkid(@ModelAttribute VotersEntity votersEntity, newregister newregister, Model m,
+	public String checkid(@ModelAttribute VotersEntity votersEntity, Model m,
 			HttpServletRequest request) {
-		String name = this.user.CheckName(newregister);
+		
 		String id = user.checkid(votersEntity);
-		if (name == "success") {
-
-			return "givevote";
-
-		}  if (id == "success") {
+		  if (id == "success") {
 
 			int deleteid = votersEntity.getId();
 			this.user.deleteCheckid(deleteid);

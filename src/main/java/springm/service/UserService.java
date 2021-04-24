@@ -13,6 +13,7 @@ import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.candivote;
 import springm.model.newregister;
+import springm.model.otp;
 import springm.model.requestID;
 
 @Service
@@ -23,7 +24,10 @@ public class UserService {
 
 	
 	
-	
+	public String getotp(otp opt)
+	{
+		return this.userdao.getotp(opt);
+	}
 	
 	public int createUser(newregister newregister) {
 

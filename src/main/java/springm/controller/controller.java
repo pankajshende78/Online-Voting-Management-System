@@ -1,19 +1,36 @@
 package springm.controller;
 
+import java.util.List;
+import java.util.Properties;
+import java.util.Random;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javassist.Loader.Simple;
 import springm.model.Contact;
+import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.newregister;
+import springm.model.otp;
 import springm.model.requestID;
 import springm.service.UserService;
 
@@ -22,6 +39,8 @@ public class controller {
 
 	@Autowired
 	private UserService user;
+
+	
 
 	@RequestMapping("/")
 	public String firstpage() {
@@ -32,16 +51,15 @@ public class controller {
 	public String back() {
 		return "index";
 	}
-	
-	
+
 	@RequestMapping("/homepage")
 	public String login() {
 		return "homepage";
 	}
 
-
 	@RequestMapping("/newregister")
 	public String newregistration() {
+
 		return "newregistration";
 	}
 
@@ -90,7 +108,7 @@ public class controller {
 			String id = user.checkservuser(newregister);
 
 			if (id == "success") {
-				
+
 				return "userlogin";
 			} else {
 
@@ -134,22 +152,95 @@ public class controller {
 			return redirectView;
 		}
 	}
+
+	@RequestMapping(path = "/request", method = RequestMethod.POST)
+	public RedirectView saverequest(@ModelAttribute requestID requestID, HttpServletRequest request) {
+
+		int id = this.user.saveRequest(requestID);
+
+		if (id > 0) {
+			RedirectView redirectView = new RedirectView();
+			redirectView.setUrl(request.getContextPath() + "/userlogin");
+			return redirectView;
+		} else {
+			RedirectView redirectView = new RedirectView();
+			redirectView.setUrl(request.getContextPath() + "/error");
+			return redirectView;
+		}
 		
-		@RequestMapping(path = "/request", method = RequestMethod.POST)
-		public RedirectView saverequest(@ModelAttribute requestID requestID, HttpServletRequest request) {
+	}
+	
+	
+	@RequestMapping(path = "/checkmail", method = RequestMethod.POST)
+	public String sendEmailToClient(@ModelAttribute  newregister newregister) {
+	
+		String to=newregister.getEmail();
+		
+		if(to==null)
+		{
+			return "userError";
+		}
+		
+		int[] arr = new int[] {1432, 7845,9854,9857,6251,2361,5482, 1401, 1808, 3205};
+		int id=  arr[new Random().nextInt(arr.length)];
+			
 
-			int id = this.user.saveRequest(requestID);
+		String message = id +" is the OTP for Verification , Do not share with anyone";
+		String subject = "Verification: OTP";
+		
+		String from = "shendepankaj56@gmail.com";
 
-			if (id > 0) {
-				RedirectView redirectView = new RedirectView();
-				redirectView.setUrl(request.getContextPath() + "/userlogin");
-				return redirectView;
-			} else {
-				RedirectView redirectView = new RedirectView();
-				redirectView.setUrl(request.getContextPath() + "/error");
-				return redirectView;
+		String host = "smtp.gmail.com";
+
+		Properties properties = System.getProperties();
+		properties.put("mail.smtp.host", host);
+		properties.put("mail.smtp.port", "465");
+		properties.put("mail.smtp.ssl.enable", "true");
+		properties.put("mail.smtp.auth", "true");
+		Session session = Session.getInstance(properties, new Authenticator() {
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("Shendepankaj56@gmail.com", "9594379121p");
 			}
+		});
+		session.setDebug(true);
+		MimeMessage m = new MimeMessage(session);
+
+		try {
+			m.setFrom(from);
+			m.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+			m.setSubject(subject);
+			m.setText(message);
+
+			Transport.send(m);
+
+			
+		} catch (Exception e) {
+			
+			return "userError";
+			
+		}
+
+		return "otpPage";
 
 	}
+	
+	@RequestMapping(path = "/checkOtp", method = RequestMethod.POST)
+	public String Checkotp(@ModelAttribute otp  otp) {
+ 
+	String id =user.getotp(otp);
+	 if (id == "success") {
+
+			return "givevote";
+
+		} else {
+			return "userError";
+
+		}
+	
+		
+	}
+
+	
 
 }

@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Lob;
+import javax.transaction.TransactionScoped;
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -24,6 +25,7 @@ import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.candivote;
 import springm.model.newregister;
+import springm.model.otp;
 import springm.model.requestID;
 
 @Repository
@@ -71,6 +73,31 @@ public class UserDao {
 		Integer id = (Integer) this.hibernateTemplate.save(candivote);
 		return id;
 
+	}
+
+	@Transactional
+	public String getotp(otp otp) {
+
+
+		String email = otp.getOtp();
+		
+
+		Session s = sessionFactory.getCurrentSession();
+
+		String q = "from otp as s where s.otp=:otp ";
+
+		Query query = s.createQuery(q);
+
+		query.setParameter("otp",otp.getOtp());
+		
+
+		List r = query.list();
+
+		if (r != null && (r.size() > 0)) {
+			return "success";
+		} else {
+			return "fail";
+		}
 	}
 
 	@Transactional
@@ -170,6 +197,7 @@ public class UserDao {
 		Contact c = this.hibernateTemplate.load(Contact.class, id);
 		this.hibernateTemplate.delete(c);
 	}
+
 	@Transactional
 	public void deletevoter(int id) {
 
@@ -197,6 +225,7 @@ public class UserDao {
 		this.hibernateTemplate.delete(v);
 
 	}
+
 	@Transactional
 	public void deletecandi(int deleteid) {
 		NewElecCandi v = this.hibernateTemplate.load(NewElecCandi.class, deleteid);
