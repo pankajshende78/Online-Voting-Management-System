@@ -200,7 +200,7 @@ public class controller {
 		Session session = Session.getInstance(properties, new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("Shendepankaj56@gmail.com", "9594379121p");
+				return new PasswordAuthentication("", "");
 			}
 		});
 		session.setDebug(true);
