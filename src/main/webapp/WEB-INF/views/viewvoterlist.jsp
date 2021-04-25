@@ -84,10 +84,12 @@ body  {
 
 <div class="container">
 
-				<a href="Givevotelogin" class="btn btn-primary">Give vote</a> </div>
+				<a href="givevote" class="btn btn-primary">Give vote</a>  <!-- -->
 
-<div class="container text-right" align="right">
 
+				<a href="requestforid" class="btn btn-warning">Request For VoterID</a> </div>
+				
+<div class="container text-right" align="right"><br>
 				<a href="userlogin" class="btn btn-danger">Back</a> </div>
 
 </body>

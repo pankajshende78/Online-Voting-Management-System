@@ -58,7 +58,7 @@
 				<ul>
 					<li class="active"><a href="#header">CheckName</a></li>
 
-					<li><a href="Givevotelogin">Give Vote</a></li>
+					<li><a href="givevote">Give Vote</a></li>
 					<li><a href="#contact">Request For ID</a></li>
 						<li><a href="contact">Contact</a></li>
 
@@ -75,11 +75,11 @@
 
 	<section id="hero">
 		<div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-			<h1>CHECK YOUR NAME
+			<h1>CHECK YOUR VOTER ID
 			</h1>
 
 			<div class="d-flex">
-				<a href="viewvoterlist" class="btn-get-started scrollto">HERE </a>
+				<a href="Givevotelogin" class="btn-get-started scrollto">HERE </a>
 			</div>
 		</div>
 	</section>

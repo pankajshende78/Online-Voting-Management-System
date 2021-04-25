@@ -129,6 +129,7 @@ public class admincontroller {
 			HttpServletRequest request) {
 		
 		String id = user.checkid(votersEntity);
+		
 		  if (id == "success") {
 
 			int deleteid = votersEntity.getId();

@@ -60,7 +60,7 @@ body  {
 					<div class="form-group text-white">
 						<label for="name">Enter Your Voter ID</label><input type="text"
 							class="form-control" id="name" aria-describedbr="emailHelp"
-							name="email" placeholder="EnterID Here">
+							name="id" placeholder="EnterID Here">
 					</div>
 					
 

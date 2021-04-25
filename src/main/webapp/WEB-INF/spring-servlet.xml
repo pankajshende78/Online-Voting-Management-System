@@ -42,9 +42,9 @@
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver"></property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/springproject"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>
+			value="jdbc:mysql://localhost:3306/mydb"></property>
+		<property name="username" value="pankaj305"></property>
+		<property name="password" value="pankaj305"></property>
 
 
 	</bean>

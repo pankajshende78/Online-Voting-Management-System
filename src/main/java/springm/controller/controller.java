@@ -67,6 +67,12 @@ public class controller {
 	public String error() {
 		return "error";
 	}
+	
+	
+	@RequestMapping("/requestforid")
+	public String requestid() {
+		return "RequestID";
+	}
 
 	@RequestMapping(path = "/savenewregister", method = RequestMethod.POST)
 	public RedirectView savenewregister(@ModelAttribute newregister newregister, HttpServletRequest request) {
@@ -176,16 +182,13 @@ public class controller {
 	
 		String to=newregister.getEmail();
 		
-		if(to==null)
-		{
-			return "userError";
-		}
+	
 		
 		int[] arr = new int[] {1432, 7845,9854,9857,6251,2361,5482, 1401, 1808, 3205};
 		int id=  arr[new Random().nextInt(arr.length)];
 			
 
-		String message = id +" is the OTP for Verification , Do not share with anyone";
+		String message = id +" is the OTP for Verification, Do not share with anyone";
 		String subject = "Verification: OTP";
 		
 		String from = "shendepankaj56@gmail.com";
@@ -226,15 +229,19 @@ public class controller {
 	}
 	
 	@RequestMapping(path = "/checkOtp", method = RequestMethod.POST)
-	public String Checkotp(@ModelAttribute otp  otp) {
+	public String Checkotp(@ModelAttribute otp  otp ,Model m) {
  
 	String id =user.getotp(otp);
+	
 	 if (id == "success") {
 
-			return "givevote";
+			List<VotersEntity> viewvoter = user.getproduct();
+			m.addAttribute("viewvoter", viewvoter);
+			return "viewvoterlist";
 
-		} else {
-			return "userError";
+		} 
+	 else {
+			return "GiveVoteLogin";
 
 		}
 	

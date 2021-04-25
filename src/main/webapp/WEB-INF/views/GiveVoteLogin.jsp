@@ -66,13 +66,17 @@ body  {
 
 
 
-						<button type="submit" class="btn btn-primary">verify</button>
+						<button type="submit" class="btn btn-primary">get OTP</button>
 						<button type="reset" class="btn btn-primary">Reset</button>
 					</div>
 
 				</form>
 
-				<br> <br> <br>
+				<br>
+	<div class="container text-center text-danger" >
+
+		<h4>Note : Enter Vaild Email To Get OTP.</h4>
+	</div> <br>
 
 				<div class="container text-right" align="right">
 
