@@ -84,7 +84,7 @@ body  {
 
 <div class="container">
 
-				<a href="givevote" class="btn btn-primary">Give vote</a>  <!-- -->
+				<a href="Givevotelogin" class="btn btn-primary">Give vote</a>  <!-- -->
 
 
 				<a href="requestforid" class="btn btn-warning">Request For VoterID</a> </div>

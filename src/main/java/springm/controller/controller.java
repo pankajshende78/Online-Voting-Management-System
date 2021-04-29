@@ -6,6 +6,7 @@ import java.util.Random;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
+import javax.mail.NoSuchProviderException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -30,7 +31,7 @@ import springm.model.Contact;
 import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.newregister;
-import springm.model.otp;
+
 import springm.model.requestID;
 import springm.service.UserService;
 
@@ -39,8 +40,6 @@ public class controller {
 
 	@Autowired
 	private UserService user;
-
-	
 
 	@RequestMapping("/")
 	public String firstpage() {
@@ -67,8 +66,7 @@ public class controller {
 	public String error() {
 		return "error";
 	}
-	
-	
+
 	@RequestMapping("/requestforid")
 	public String requestid() {
 		return "RequestID";
@@ -173,81 +171,7 @@ public class controller {
 			redirectView.setUrl(request.getContextPath() + "/error");
 			return redirectView;
 		}
-		
-	}
-	
-	
-	@RequestMapping(path = "/checkmail", method = RequestMethod.POST)
-	public String sendEmailToClient(@ModelAttribute  newregister newregister) {
-	
-		String to=newregister.getEmail();
-		
-	
-		
-		int[] arr = new int[] {1432, 7845,9854,9857,6251,2361,5482, 1401, 1808, 3205};
-		int id=  arr[new Random().nextInt(arr.length)];
-			
-
-		String message = id +" is the OTP for Verification, Do not share with anyone";
-		String subject = "Verification: OTP";
-		
-		String from = "shendepankaj56@gmail.com";
-
-		String host = "smtp.gmail.com";
-
-		Properties properties = System.getProperties();
-		properties.put("mail.smtp.host", host);
-		properties.put("mail.smtp.port", "465");
-		properties.put("mail.smtp.ssl.enable", "true");
-		properties.put("mail.smtp.auth", "true");
-		Session session = Session.getInstance(properties, new Authenticator() {
-			@Override
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("", "");
-			}
-		});
-		session.setDebug(true);
-		MimeMessage m = new MimeMessage(session);
-
-		try {
-			m.setFrom(from);
-			m.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-			m.setSubject(subject);
-			m.setText(message);
-
-			Transport.send(m);
-
-			
-		} catch (Exception e) {
-			
-			return "userError";
-			
-		}
-
-		return "otpPage";
 
 	}
-	
-	@RequestMapping(path = "/checkOtp", method = RequestMethod.POST)
-	public String Checkotp(@ModelAttribute otp  otp ,Model m) {
- 
-	String id =user.getotp(otp);
-	
-	 if (id == "success") {
-
-			List<VotersEntity> viewvoter = user.getproduct();
-			m.addAttribute("viewvoter", viewvoter);
-			return "viewvoterlist";
-
-		} 
-	 else {
-			return "GiveVoteLogin";
-
-		}
-	
-		
-	}
-
-	
 
 }

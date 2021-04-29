@@ -50,7 +50,7 @@ body  {
 				<h1 class="text-center mb-4 text-white">Enter Your Valid Email ID</h1>
 				<hr>
 
-				<form action="checkmail" method="post" name="myform"
+				<form action="checkid" method="post" name="myform"
 					onsubmit="return validateform()">
 
 					
@@ -66,18 +66,14 @@ body  {
 
 
 
-						<button type="submit" class="btn btn-primary">get OTP</button>
+						<button type="submit" class="btn btn-primary">verify</button>
 						<button type="reset" class="btn btn-primary">Reset</button>
 					</div>
 
 				</form>
 
 				<br>
-	<div class="container text-center text-danger" >
-
-		<h4>Note : Enter Vaild Email To Get OTP.</h4>
-	</div> <br>
-
+	
 				<div class="container text-right" align="right">
 
 					<a href="userlogin" class="btn btn-danger">Back</a> <br>

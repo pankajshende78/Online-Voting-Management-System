@@ -126,13 +126,13 @@ body  {
 
 				<div class="col-md-3 text-center">
 					<ul class="list-unstyled mb-0">
-						<li><i class="fas fa-map-marker-alt fa-2x " ></i>
+						<li><i class="fas fa-map-marker-alt fa-2x text-white" ></i>
 							<p class="text-white">Pankaj Shende</p></li>
 
-						<li><i class="fas fa-phone mt-4 fa-2x "></i>
+						
 							<p class="text-white" >Thane, India</p></li>
 
-						<li><i class="fas fa-envelope mt-4 fa-2x"></i>
+						
 							<p class="text-white">Shendepankaj78@gmail.com</p></li>
 					</ul>
 				</div>

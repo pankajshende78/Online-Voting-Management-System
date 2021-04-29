@@ -125,12 +125,17 @@ public class admincontroller {
 	}
 
 	@RequestMapping(path = "/checkid", method = RequestMethod.POST)
-	public String checkid(@ModelAttribute VotersEntity votersEntity, Model m,
+	public String checkid(@ModelAttribute VotersEntity votersEntity, newregister newregister, Model m,
 			HttpServletRequest request) {
-		
+		String name = user.CheckName(newregister);
 		String id = user.checkid(votersEntity);
-		
-		  if (id == "success") {
+		if (name == "success") {
+
+			return "givevote";
+
+		}
+
+		if (id == "success") {
 
 			int deleteid = votersEntity.getId();
 			this.user.deleteCheckid(deleteid);
@@ -144,6 +149,7 @@ public class admincontroller {
 			return "userError";
 
 		}
+
 	}
 
 	@RequestMapping("/candidatedata")
@@ -247,8 +253,7 @@ public class admincontroller {
 		redirectView.setUrl(request.getContextPath() + "/candidatedata");
 		return redirectView;
 	}
-	
-	
+
 	@RequestMapping("/deletevoter/{Id}")
 	public RedirectView deletevoter(@PathVariable("Id") int id, HttpServletRequest request) {
 		this.user.deletevoter(id);

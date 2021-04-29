@@ -79,7 +79,7 @@
 			</h1>
 
 			<div class="d-flex">
-				<a href="Givevotelogin" class="btn-get-started scrollto">HERE </a>
+				<a href="viewvoterlist" class="btn-get-started scrollto">HERE</a>
 			</div>
 		</div>
 	</section>

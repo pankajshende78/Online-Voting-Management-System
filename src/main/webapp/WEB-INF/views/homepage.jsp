@@ -43,7 +43,7 @@ body  {
 	</nav>
 	</div>
 
-	<hr>
+	<hr style="height:2px;border-width:0;color:gray;background-color:white">
 
 
 	<div class="row">

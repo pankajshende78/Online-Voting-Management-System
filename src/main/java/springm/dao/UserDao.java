@@ -25,7 +25,7 @@ import springm.model.NewElecCandi;
 import springm.model.VotersEntity;
 import springm.model.candivote;
 import springm.model.newregister;
-import springm.model.otp;
+
 import springm.model.requestID;
 
 @Repository
@@ -75,30 +75,7 @@ public class UserDao {
 
 	}
 
-	@Transactional
-	public String getotp(otp otp) {
-
-
-		String email = otp.getOtp();
-		
-
-		Session s = sessionFactory.getCurrentSession();
-
-		String q = "from otp as s where s.otp=:otp ";
-
-		Query query = s.createQuery(q);
-
-		query.setParameter("otp",otp.getOtp());
-		
-
-		List r = query.list();
-
-		if (r != null && (r.size() > 0)) {
-			return "success";
-		} else {
-			return "fail";
-		}
-	}
+	
 
 	@Transactional
 	public String checklogin(newregister newregister) {
